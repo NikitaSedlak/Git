@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Domain
 {
-    class OrderedTicket
+    public class OrderedTicket
     {
         public int Id { get; set; }
         public int IdTicket { get; set; }
