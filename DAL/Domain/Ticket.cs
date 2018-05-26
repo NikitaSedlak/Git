@@ -16,11 +16,7 @@ namespace DAL.Domain
         public decimal Price { get; set; }
         public virtual Flight Flight { get; set; }
         public virtual ComfortLevel ComfortLevel { get; set; }
-
-        [Index("Ticket_Flight_Seat", 1, IsUnique = true)]
         public int SeatNumber { get; set; }
-
-        [Index("Ticket_Flight_Seat", 2, IsUnique = true)]
         public int FligthId { get; set; }
 
     }

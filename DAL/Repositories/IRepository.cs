@@ -8,9 +8,13 @@ namespace DAL.Repositories
 {
     public interface IRepository<T> where T : class
     {
-        void Create(T item);
-        void Update(T item);
-        void Delete(T item);
-        T Read(int id);
+        void Create(T item);                //создание
+        T Read(int id);                     //получение объекта по id
+        void Update(T item);                //обновление
+        void Delete(int id);                //удаление обьекта
+
+        void Save();                        //сохранение изменений
+
+        IEnumerable<T> GetAll();            //Получение всех объектов
     }
 }

@@ -12,13 +12,8 @@ namespace DAL.Domain
     class OrderedTicket
     {
         public int Id { get; set; }
-
-        [Index(IsUnique = true)]
         public int IdTicket { get; set; }
-
-        [Index(IsUnique = true)]
         public int IdOrder { get; set; }
-
         public virtual Ticket Ticket { get; set; }
         public virtual Order Order { get; set; }
 
