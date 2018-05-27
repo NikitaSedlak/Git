@@ -11,15 +11,15 @@ namespace DAL
     public class Context : DbContext
     {
         public Context()
-            : base("ConectionString")
+            : base("conectionString")
         {
 
         }
 
-        static Context()
-        {
-            Database.SetInitializer<Context>(new ContextInitializer());
-        }
+        //static Context()
+        //{
+        //    Database.SetInitializer<Context>(new ContextInitializer());
+        //}
 
         public virtual DbSet<Aircraft> Aircrafts {get; set;}
         public virtual DbSet<City> Cities {get; set;}

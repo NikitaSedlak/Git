@@ -17,10 +17,10 @@ namespace DAL.Domain
         public int IdArrivalCity { get; set; }
         public int IdDepartureCity { get; set; }
 
-        [ForeignKey("ArrivalCity")]
+        //[ForeignKey("ArrivalCity")]
         public virtual City ArrivalCity { get; set; }
 
-        [ForeignKey("DepartureCity")]
+        //[ForeignKey("DepartureCity")]
         public virtual City DepartureCity { get; set; }
     }
 }

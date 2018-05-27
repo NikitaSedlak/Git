@@ -13,10 +13,10 @@ namespace DAL.Domain
         public string Name { get; set; }
         public int PostIndex { get; set; }
 
-        [InverseProperty("ArrivalCity")]
+        //[InverseProperty("ArrivalCity")]
         public virtual ICollection<Flight> ArrivalFlights { get; set; }
 
-        [InverseProperty("DepartureCity")]
+        //[InverseProperty("DepartureCity")]
         public virtual ICollection<Flight> DepartureFlights { get; set; }
 
         public City()
