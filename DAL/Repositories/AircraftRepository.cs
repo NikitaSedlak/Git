@@ -1,6 +1,7 @@
 ﻿using DAL.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,32 +17,36 @@ namespace DAL.Repositories
         }
         public void Create(Aircraft item)
         {
-            throw new NotImplementedException();
+            DBcontext.Aircrafts.Add(item);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Aircraft aircraft = DBcontext.Aircrafts.Find(id);
+            if (aircraft != null)
+            {
+                DBcontext.Aircrafts.Remove(aircraft);
+            }
         }
 
         public IEnumerable<Aircraft> GetAll()
         {
-            throw new NotImplementedException();
+            return DBcontext.Aircrafts;
         }
 
         public Aircraft Read(int id)
         {
-            throw new NotImplementedException();
+            return DBcontext.Aircrafts.Find(id);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            DBcontext.SaveChanges();
         }
 
         public void Update(Aircraft item)
         {
-            throw new NotImplementedException();
+            DBcontext.Entry(item).State = EntityState.Modified;
         }
     }
 }

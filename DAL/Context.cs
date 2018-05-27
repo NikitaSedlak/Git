@@ -16,6 +16,11 @@ namespace DAL
 
         }
 
+        static Context()
+        {
+            Database.SetInitializer<Context>(new ContextInitializer());
+        }
+
         public virtual DbSet<Aircraft> Aircrafts {get; set;}
         public virtual DbSet<City> Cities {get; set;}
         public virtual DbSet<ComfortLevel> ComfortLevels {get; set;}

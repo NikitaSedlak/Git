@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,32 +18,36 @@ namespace DAL.Repositories
         }
         public void Create(Order item)
         {
-            throw new NotImplementedException();
+            DBcontext.Orders.Add(item); ;
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Order order = DBcontext.Orders.Find(id);
+            if (order != null)
+            {
+                DBcontext.Orders.Remove(order);
+            }
         }
 
         public IEnumerable<Order> GetAll()
         {
-            throw new NotImplementedException();
+            return DBcontext.Orders;
         }
 
         public Order Read(int id)
         {
-            throw new NotImplementedException();
+            return DBcontext.Orders.Find(id);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            DBcontext.SaveChanges();
         }
 
         public void Update(Order item)
         {
-            throw new NotImplementedException();
+            DBcontext.Entry(item).State = EntityState.Modified;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,32 +18,36 @@ namespace DAL.Repositories
         }
         public void Create(ComfortLevel item)
         {
-            throw new NotImplementedException();
+            DBcontext.ComfortLevels.Add(item);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            ComfortLevel comfortLevel = DBcontext.ComfortLevels.Find(id);
+            if (comfortLevel != null)
+            {
+                DBcontext.ComfortLevels.Remove(comfortLevel);
+            }
         }
 
         public IEnumerable<ComfortLevel> GetAll()
         {
-            throw new NotImplementedException();
+            return DBcontext.ComfortLevels;
         }
 
         public ComfortLevel Read(int id)
         {
-            throw new NotImplementedException();
+            return DBcontext.ComfortLevels.Find(id);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            DBcontext.SaveChanges();
         }
 
         public void Update(ComfortLevel item)
         {
-            throw new NotImplementedException();
+            DBcontext.Entry(item).State = EntityState.Modified;
         }
     }
 }

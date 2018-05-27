@@ -12,5 +12,10 @@ namespace DAL.Domain
         public string Surname { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+
+        public Profile()
+        {
+            Orders = new List<Order>();
+        }
     }
 }

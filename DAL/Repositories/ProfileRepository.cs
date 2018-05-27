@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,32 +18,36 @@ namespace DAL.Repositories
         }
         public void Create(Profile item)
         {
-            throw new NotImplementedException();
+            DBcontext.Profiles.Add(item);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Profile profile = DBcontext.Profiles.Find(id);
+            if (profile != null)
+            {
+                DBcontext.Profiles.Remove(profile);
+            }
         }
 
         public IEnumerable<Profile> GetAll()
         {
-            throw new NotImplementedException();
+            return DBcontext.Profiles;
         }
 
         public Profile Read(int id)
         {
-            throw new NotImplementedException();
+            return DBcontext.Profiles.Find(id);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            DBcontext.SaveChanges();
         }
 
         public void Update(Profile item)
         {
-            throw new NotImplementedException();
+            DBcontext.Entry(item).State = EntityState.Modified;
         }
     }
 }

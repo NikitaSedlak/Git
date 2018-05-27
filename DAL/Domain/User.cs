@@ -12,7 +12,7 @@ namespace DAL.Domain
         public string Login { get; set; }
         public string Password { get; set; }
         public int  IdProfile { get; set; }
-        public string Access { get; set; }
+        public bool Access { get; set; }
         public virtual Profile Profile { get; set; }
     }
 }

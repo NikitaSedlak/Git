@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="ContextInitializer.cs" />
     <Compile Include="Domain\Aircraft.cs" />
     <Compile Include="Domain\City.cs" />
     <Compile Include="Domain\ComfortLevel.cs" />

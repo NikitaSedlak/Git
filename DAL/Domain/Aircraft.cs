@@ -12,5 +12,10 @@ namespace DAL.Domain
         public string Name { get; set; }
         public string CompanyName { get; set; }
         public virtual ICollection<Flight> Flights { get; set; }
+
+        public Aircraft()
+        {
+            Flights = new List<Flight>();
+        }
     }
 }
