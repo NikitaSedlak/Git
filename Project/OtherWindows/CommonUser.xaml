@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.OtherWindows"
         mc:Ignorable="d"
-        Title="CommonUser" Height="450" Width="800">
-    <Grid>
-        
+        Title="CommonUser" Height="388.646" Width="808.421">
+    <Grid Margin="0,0,2,5">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFDADADA" Offset="0"/>
+                <GradientStop Color="#FFA0A0A0" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="420"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="373*"/>
+            <ColumnDefinition Width="14*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Find Flight" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="135" FontSize="20" Foreground="Black" Grid.Column="1" Height="37" Grid.Row="1"/>
+        <Label Content="Departure City" HorizontalAlignment="Left" Margin="10,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.794,-0.357" Grid.Column="1" Height="31" Width="135" FontSize="14"/>
+        <GridSplitter HorizontalAlignment="Left" Height="134" Margin="76,-15,0,0" VerticalAlignment="Top" Width="5" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Grid.Column="1">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.922"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
+        <ComboBox x:Name="cmbDep" HorizontalAlignment="Left" Margin="10,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Grid.Column="1" Height="22"/>
+        <Label Content="Arrival City" HorizontalAlignment="Left" Margin="10,118,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.794,-0.357" Grid.Column="1" Height="31" Width="135" FontSize="14"/>
+        <ComboBox x:Name="cmbArr" HorizontalAlignment="Left" Margin="10,149,0,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Grid.Column="1" Height="22"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="10,202,0,0" Grid.Row="1" VerticalAlignment="Top" Width="135" Height="28" Grid.Column="1" Text="Choose the date" RenderTransformOrigin="0.431,-0.594"/>
+        <TextBox x:Name="tbDep" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="592,89,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Departure City" HorizontalAlignment="Left" Margin="592,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.794,-0.357" Grid.Column="1" Height="31" Width="135" FontSize="14"/>
+        <TextBox x:Name="tbArr" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="592,148,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Arrival City" HorizontalAlignment="Left" Margin="592,112,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.794,-0.357" Grid.Column="1" Height="37" Width="135" FontSize="14"/>
+        <Label Content="Your Choice" HorizontalAlignment="Left" Margin="592,5,0,0" VerticalAlignment="Top" Width="135" FontSize="20" Foreground="Black" Grid.Column="1" Height="37" Grid.Row="1"/>
+        <GridSplitter HorizontalAlignment="Left" Height="146" Margin="663,-21,0,0" VerticalAlignment="Top" Width="5" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Grid.Column="1">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.922"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
+        <Label Content="Date" Grid.Column="1" HorizontalAlignment="Left" Margin="592,171,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="135" Height="37"/>
+        <TextBox x:Name="tbDate" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="592,202,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Aircraft" Grid.Column="1" HorizontalAlignment="Left" Margin="592,225,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="135" Height="37"/>
+        <TextBox x:Name="tbPrice" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="592,262,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="btnBuy" Content="Buy ticket" Grid.Column="1" HorizontalAlignment="Left" Margin="647,319,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="btnFind" Content="Find" Grid.Column="1" HorizontalAlignment="Left" Margin="70,262,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnFind_Click"/>
+        <DataGrid x:Name="listGrid" Grid.Column="1" HorizontalAlignment="Left" Height="333" Margin="166,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="404"/>
+
     </Grid>
 </Window>

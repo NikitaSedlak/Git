@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
-        mc:Ignorable="d" Height="312.97" Width="471.541" Background="#FFD8D8D8" Title="Login form">
+        mc:Ignorable="d" Height="364.74" Width="471.541" Background="#FFD8D8D8" Title="Login form">
     <Grid Margin="53,0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -13,13 +13,14 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Label Content="Login" HorizontalAlignment="Left" Margin="75,64,0,0" VerticalAlignment="Top" Width="208" Background="{x:Null}" FontSize="16" Foreground="White"/>
-        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="27" Margin="75,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" TextChanged="tbPassword_TextChanged" FontSize="18"/>
-        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="27" Margin="75,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18"/>
+        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="27" Margin="75,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="16"/>
         <Label Content="Your Password" HorizontalAlignment="Left" Margin="75,127,0,0" VerticalAlignment="Top" Width="208" Background="{x:Null}" Height="31" FontSize="16" Foreground="White"/>
         <Button x:Name="btnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="75,190,0,0" VerticalAlignment="Top" Width="208" Height="26" Click="btnLogIn_Click"/>
         <Label Content="Don't have an account?" HorizontalAlignment="Left" Margin="75,234,0,0" VerticalAlignment="Top" Foreground="White" Width="133"/>
         <Button x:Name="btnRegist" Content="Click here!" Margin="208,237,75,0" VerticalAlignment="Top" Opacity="30" Click="btnRegist_Click"/>
         <Label Content="Global Avia" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Yu Gothic UI Semibold" FontSize="20" Width="358" Background="#FFECECEC"/>
+        <PasswordBox x:Name="tbPassword" HorizontalAlignment="Left" Margin="75,158,0,0" VerticalAlignment="Top" Width="208" Height="27" FontSize="16"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="0,299,0,0" VerticalAlignment="Top" FontFamily="Yu Gothic UI Semibold" FontSize="20" Width="358" Background="#FFECECEC" Height="25"/>
 
     </Grid>
 </Window>

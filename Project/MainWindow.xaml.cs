@@ -47,13 +47,13 @@ namespace Project
             {
                 MessageBox.Show("Error!", "Enter Login!", MessageBoxButton.OK);
             }
-            else if (tbPassword.Text == "")
+            else if (tbPassword.Password == "")
             {
                 MessageBox.Show("Error!", "Enter Password!", MessageBoxButton.OK);
             }
             else
             {
-                if (checkUser.LoginedUser(tbLogin.Text, tbPassword.Text))
+                if (checkUser.LoginedUser(tbLogin.Text, tbPassword.Password))
                 {
                     if (checkUser.AdminUser(tbLogin.Text))
                     {
