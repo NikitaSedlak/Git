@@ -9,6 +9,6 @@ namespace DAL.Domain
     public class ComfortLevel
     {
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string Level { get; set; }
     }
 }

@@ -10,7 +10,8 @@ namespace DAL.Domain
     {
         public int Id { get; set; }
         public DateTime OrderDate { get; set; }
-        public int IdProfile { get; set; }
+
+        public int ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
     }
 }

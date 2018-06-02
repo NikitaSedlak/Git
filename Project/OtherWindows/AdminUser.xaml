@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.OtherWindows"
         mc:Ignorable="d"
-        Title="AdminUser" Height="450" Width="800">
+        Title="AdminUser" Height="326" Width="316">
     <Grid>
-        
+        <Button x:Name="btnAddUser" Content="User Managment" Margin="80,50,80,0" VerticalAlignment="Top" Height="30" Click="btnAddUser_Click" IsEnabled="False"/>
+        <Button x:Name="btnAddFlight" Content="Flight Managment" Margin="80,100,80,165" Click="btnAddFlight_Click"/>
+        <Button Content="test" Margin="80,150,80,0" VerticalAlignment="Top" Height="30" IsEnabled="False"/>
+        <Button Content="test" Margin="80,200,80,0" VerticalAlignment="Top" Height="30" IsEnabled="False"/>
+
     </Grid>
 </Window>

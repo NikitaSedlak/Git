@@ -12,8 +12,22 @@ namespace DAL
     {
         protected override void Seed(Context context)
         {
-            Profile p1 = new Profile {Name = "Admin", Surname = "Admin", Orders = null};
-            User u1 = new User {Access = true, Login = "SuperAdmin", Password = "Pa$$w0rd", Profile = p1, IdProfile = p1.Id};
+            User u1 = new User
+            {
+                Login = "Admin",
+                Password = "Admin"
+            };
+
+            Profile p1 = new Profile
+            {
+                Id = u1.Id,
+                Name = "Admin",
+                Surname = "Admin",
+                Access = true,
+                Age = 20,
+                Email = "admin.admin@admin.com",
+                Order = null
+            };
 
             context.Profiles.Add(p1);
             context.Users.Add(u1);

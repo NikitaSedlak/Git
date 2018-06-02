@@ -11,6 +11,7 @@ namespace DAL.Domain
         public int Id { get; set; }
         public string Name { get; set; }
         public string CompanyName { get; set; }
+
         public virtual ICollection<Flight> Flights { get; set; }
 
         public Aircraft()

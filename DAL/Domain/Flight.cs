@@ -9,18 +9,23 @@ namespace DAL.Domain
 {
     public class Flight
     {
-        public int ID { get; set; }
-        public int IdAircraft { get; set; }
+        public int Id { get; set; }
+
+        public int AircraftId { get; set; }
         public virtual Aircraft Aircraft { get; set; }
+
         public DateTime ArrivalTime { get; set; }
         public DateTime DepartureTime { get; set; }
-        public int IdArrivalCity { get; set; }
-        public int IdDepartureCity { get; set; }
 
-        //[ForeignKey("ArrivalCity")]
+
+        public int ArrivalCityId { get; set; }
+
+        [ForeignKey("ArrivalCityId")]
         public virtual City ArrivalCity { get; set; }
 
-        //[ForeignKey("DepartureCity")]
+        public int DepartureCityId { get; set; }
+
+        [ForeignKey("DepartureCityId")]
         public virtual City DepartureCity { get; set; }
     }
 }

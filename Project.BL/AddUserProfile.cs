@@ -12,47 +12,42 @@ namespace Project.BL
 {
     public class AddUserProfile
     {
-        private Context context;
-        //public ProfileRepository profileRepository;
+        public ProfileRepository profileRepository;
         public UserRepository userRepository;
 
         public AddUserProfile()
         {
-            context = new Context();
-            //profileRepository = new ProfileRepository();
+            profileRepository = new ProfileRepository();
             userRepository = new UserRepository();
         }
 
-        public bool AddUser(string _login, string _password, string _name, string _surname)
+        public bool AddUser(string _login, string _password, string _name, string _surname, int _age, string _email)
         {
             try
             {
-                if (!context.Users.All(x => x.Login == _login))
+                if (!(userRepository.GetAll().Single(x => x.Login == _login).Login == _login))
                 {
-                    Profile profile = new Profile
-                    {
-                        Name = _name,
-                        Surname = _surname,
-                        Orders = null
-                    };
-                    //User user = new User
-                    //{
-                    //    Login = _login,
-                    //    Password = _password,
-                    //    Access = false,
-                    //    IdProfile = profile.Id,
-                    //    Profile = profile
-                    //};
                     userRepository.Create(new User
                     {
                         Login = _login,
                         Password = _password,
-                        Access = false,
-                        IdProfile = profile.Id,
-                        Profile = profile
                     });
+
                     userRepository.Save();
-                    context.SaveChanges();
+
+                    profileRepository.Create(new Profile
+                    {
+                        Name = _name,
+                        Surname = _surname,
+                        Order = null,
+                        Access = false,
+                        Age = _age,
+                        Email = _email,
+                        Id = userRepository.GetAll().Single(p => p.Login == _login).Id
+                    });
+
+                    profileRepository.Save();
+
                     return true;
                 }
                 else

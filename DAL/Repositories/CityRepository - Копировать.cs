@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -10,35 +9,35 @@ using DAL.Domain;
 
 namespace DAL.Repositories
 {
-    public class FlightRepository : IRepository<Flight>
+    public class CityRepository : IRepository<City>
     {
         private Context DBcontext;
-        public FlightRepository()
+        public CityRepository()
         {
             this.DBcontext = new Context();
         }
-        public void Create(Flight item)
+        public void Create(City item)
         {
-            DBcontext.Flights.Add(item);
+            DBcontext.Cities.Add(item);
         }
 
         public void Delete(int id)
         {
-            Flight flight = DBcontext.Flights.Find(id);
-            if (flight != null)
+            City city = DBcontext.Cities.Find(id);
+            if (city != null)
             {
-                DBcontext.Flights.Remove(flight);
+                DBcontext.Cities.Remove(city);
             }
         }
 
-        public IEnumerable<Flight> GetAll()
+        public IEnumerable<City> GetAll()
         {
-            return DBcontext.Flights;
+            return DBcontext.Cities;
         }
 
-        public Flight Read(int id)
+        public City Read(int id)
         {
-            return DBcontext.Flights.Find(id);
+            return DBcontext.Cities.Find(id);
         }
 
         public void Save()
@@ -46,7 +45,7 @@ namespace DAL.Repositories
             DBcontext.SaveChanges();
         }
 
-        public void Update(Flight item)
+        public void Update(City item)
         {
             DBcontext.Entry(item).State = EntityState.Modified;
         }

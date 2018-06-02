@@ -12,20 +12,18 @@ namespace Project.BL
 {
     public class CheckUser
     {
-        //public UserRepository userRepository;
-        public Context context;
+        private UserRepository userRepository;
+
         public CheckUser()
         {
-            //userRepository = new UserRepository();
-            context = new Context();
+            userRepository = new UserRepository();
         }
 
-        public bool LoginedUser(string login, string password)
+        public bool CheckLoginedUser(string login, string password)
         {
             try
             {
-                User user = context.Users.Single(x => x.Login == login);
-                if (user.Password == password)
+                if (userRepository.GetAll().Single(p => p.Login == login).Password == password)
                     return true;
                 else
                     return false;
@@ -35,19 +33,18 @@ namespace Project.BL
                 return false;
             }
         }
-        public bool AdminUser(string login)
+        public bool CheckAdminUser(string login)
         {
             try
             {
-                User user = context.Users.Single(x => x.Login == login);
-                if (user.Access == true)
+                if (userRepository.GetAll().Single(p => p.Login == login).Profile.Access == true)
                     return true;
                 else
                     return false;
             }
             catch (Exception)
             {
-                
+
                 return false;
             }
         }
@@ -55,18 +52,20 @@ namespace Project.BL
         //{
         //    try
         //    {
-        //        User user = context.Users.Single(x => x.Login == login);
-        //        if (user.Password == password)
-        //            return "ok";
+        //        if (userRepository.GetAll().Single(p => p.Login == login).Password == password)
+        //            return "OK";
         //        else
         //            return "try not ok";
         //    }
         //    catch (Exception e)
         //    {
-
         //        return e.Message;
         //    }
-        //}
 
+        //}
+        //public void Test(string login, string password)
+        //{
+        //    bool t = userRepository.GetAll().Single(p => p.Login == login).Password == password;
+        //}
     }
 }

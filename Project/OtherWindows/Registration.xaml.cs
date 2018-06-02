@@ -51,15 +51,21 @@ namespace Project.OtherWindows
             {
                 MessageBox.Show("Error", "Enter Surname");
             }
+            else if (tbEmail.Text == "")
+            {
+                MessageBox.Show("Error", "Enter Email");
+            }
             else
             {
-                if (addUser.AddUser(tbLogin.Text, tbPass.Text, tbName.Text, tbSurname.Text))
+                if (addUser.AddUser(tbLogin.Text, tbPass.Text, tbName.Text, tbSurname.Text, (int)sldAge.Value, tbEmail.Text))
                 {
-                    MessageBox.Show("Success!", "User added!");
+                    MessageBox.Show("User added!", "Success!" );
+                    Close();
                 }
                 else
                 {
-                    MessageBox.Show("Error!", $"User with login \"{tbLogin.Text}\" already exists");
+                    MessageBox.Show( $"User with login \" {tbLogin.Text} \" already exists", "Error!");
+                    tbLogin.Clear();
                 }
             }
         }

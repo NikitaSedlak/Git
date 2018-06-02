@@ -53,9 +53,9 @@ namespace Project
             }
             else
             {
-                if (checkUser.LoginedUser(tbLogin.Text, tbPassword.Password))
+                if (checkUser.CheckLoginedUser(tbLogin.Text, tbPassword.Password))
                 {
-                    if (checkUser.AdminUser(tbLogin.Text))
+                    if (checkUser.CheckAdminUser(tbLogin.Text))
                     {
                         AdminUser adminUser = new AdminUser();
                         adminUser.ShowDialog();
@@ -70,7 +70,8 @@ namespace Project
                 {
                     MessageBox.Show("Error!", "Enter correct data!", MessageBoxButton.OK);
                 }
-                //MessageBox.Show(checkUser.Test(tbLogin.Text, tbPassword.Text).ToString());
+                //MessageBox.Show(checkUser.Test(tbLogin.Text, tbPassword.Password).ToString());
+                //checkUser.Test(tbLogin.Text, tbPassword.Password);
                 //checkUser.Test(tbLogin.Text, tbPassword.Text);
             }
         }

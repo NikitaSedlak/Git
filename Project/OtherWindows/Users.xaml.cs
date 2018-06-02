@@ -15,24 +15,13 @@ using System.Windows.Shapes;
 namespace Project.OtherWindows
 {
     /// <summary>
-    /// Логика взаимодействия для AdminUser.xaml
+    /// Логика взаимодействия для Users.xaml
     /// </summary>
-    public partial class AdminUser : Window
+    public partial class Users : Window
     {
-        public AdminUser()
+        public Users()
         {
             InitializeComponent();
-        }
-
-        private void btnAddUser_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnAddFlight_Click(object sender, RoutedEventArgs e)
-        {
-            Flight f = new Flight();
-            f.ShowDialog();
         }
     }
 }

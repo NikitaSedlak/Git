@@ -1,44 +1,42 @@
-﻿using System;
+﻿using DAL.Domain;
+using System;
 using System.Collections.Generic;
-using System.Collections;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using DAL.Domain;
-
 namespace DAL.Repositories
 {
-    public class FlightRepository : IRepository<Flight>
+    public class AircraftRepository : IRepository<Aircraft>
     {
         private Context DBcontext;
-        public FlightRepository()
+        public AircraftRepository()
         {
             this.DBcontext = new Context();
         }
-        public void Create(Flight item)
+        public void Create(Aircraft item)
         {
-            DBcontext.Flights.Add(item);
+            DBcontext.Aircrafts.Add(item);
         }
 
         public void Delete(int id)
         {
-            Flight flight = DBcontext.Flights.Find(id);
-            if (flight != null)
+            Aircraft aircraft = DBcontext.Aircrafts.Find(id);
+            if (aircraft != null)
             {
-                DBcontext.Flights.Remove(flight);
+                DBcontext.Aircrafts.Remove(aircraft);
             }
         }
 
-        public IEnumerable<Flight> GetAll()
+        public IEnumerable<Aircraft> GetAll()
         {
-            return DBcontext.Flights;
+            return DBcontext.Aircrafts;
         }
 
-        public Flight Read(int id)
+        public Aircraft Read(int id)
         {
-            return DBcontext.Flights.Find(id);
+            return DBcontext.Aircrafts.Find(id);
         }
 
         public void Save()
@@ -46,7 +44,7 @@ namespace DAL.Repositories
             DBcontext.SaveChanges();
         }
 
-        public void Update(Flight item)
+        public void Update(Aircraft item)
         {
             DBcontext.Entry(item).State = EntityState.Modified;
         }

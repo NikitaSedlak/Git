@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -10,35 +9,35 @@ using DAL.Domain;
 
 namespace DAL.Repositories
 {
-    public class FlightRepository : IRepository<Flight>
+    public class ComfortLevelRepository : IRepository<ComfortLevel>
     {
         private Context DBcontext;
-        public FlightRepository()
+        public ComfortLevelRepository()
         {
             this.DBcontext = new Context();
         }
-        public void Create(Flight item)
+        public void Create(ComfortLevel item)
         {
-            DBcontext.Flights.Add(item);
+            DBcontext.ComfortLevels.Add(item);
         }
 
         public void Delete(int id)
         {
-            Flight flight = DBcontext.Flights.Find(id);
-            if (flight != null)
+            ComfortLevel comfortLevel = DBcontext.ComfortLevels.Find(id);
+            if (comfortLevel != null)
             {
-                DBcontext.Flights.Remove(flight);
+                DBcontext.ComfortLevels.Remove(comfortLevel);
             }
         }
 
-        public IEnumerable<Flight> GetAll()
+        public IEnumerable<ComfortLevel> GetAll()
         {
-            return DBcontext.Flights;
+            return DBcontext.ComfortLevels;
         }
 
-        public Flight Read(int id)
+        public ComfortLevel Read(int id)
         {
-            return DBcontext.Flights.Find(id);
+            return DBcontext.ComfortLevels.Find(id);
         }
 
         public void Save()
@@ -46,7 +45,7 @@ namespace DAL.Repositories
             DBcontext.SaveChanges();
         }
 
-        public void Update(Flight item)
+        public void Update(ComfortLevel item)
         {
             DBcontext.Entry(item).State = EntityState.Modified;
         }

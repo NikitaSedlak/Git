@@ -1,0 +1,23 @@
+﻿<Window x:Class="Project.OtherWindows.Flight"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project.OtherWindows"
+        mc:Ignorable="d"
+        Title="Flight" Height="381" Width="800">
+    <Grid>
+        <ComboBox x:Name="cmbAir" HorizontalAlignment="Left" Margin="37,47,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Aircraft" HorizontalAlignment="Left" Margin="37,21,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Arrival date" HorizontalAlignment="Left" Margin="37,74,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Departure date" HorizontalAlignment="Left" Margin="37,128,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Arrival City" HorizontalAlignment="Left" Margin="37,182,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Departure City" HorizontalAlignment="Left" Margin="37,235,0,0" VerticalAlignment="Top" Width="140"/>
+        <ComboBox x:Name="cmbAcity" HorizontalAlignment="Left" Margin="37,208,0,0" VerticalAlignment="Top" Width="140"/>
+        <ComboBox x:Name="cmbDcity" HorizontalAlignment="Left" Margin="37,261,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button x:Name="btnAddFligth" Content="Add Flight" HorizontalAlignment="Left" Margin="37,310,0,0" VerticalAlignment="Top" Width="140" Click="btnAddFligth_Click"/>
+        <DatePicker x:Name="pcrAdate" HorizontalAlignment="Left" Margin="37,99,0,0" VerticalAlignment="Top" Width="140"/>
+        <DatePicker x:Name="pcrDdate" HorizontalAlignment="Left" Margin="37,153,0,0" VerticalAlignment="Top" Width="140"/>
+
+    </Grid>
+</Window>
