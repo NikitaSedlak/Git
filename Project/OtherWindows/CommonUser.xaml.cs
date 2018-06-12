@@ -57,7 +57,7 @@ namespace Project.OtherWindows
         {
             try
             {
-                listGrid.ItemsSource = getFlights.ReturnFlights(Convert.ToDateTime(datePicker.Text), cmbDep.Text, cmbArr.Text);
+                listGrid.ItemsSource = getFlights.ReturnFlights(Convert.ToDateTime(datePickerD.Text), Convert.ToDateTime(datePickerA.Text), cmbDep.Text, cmbArr.Text);
 
             }
             catch (Exception ex)

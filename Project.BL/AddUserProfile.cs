@@ -25,7 +25,7 @@ namespace Project.BL
         {
             try
             {
-                if (!(userRepository.GetAll().Single(x => x.Login == _login).Login == _login))
+                if (!(userRepository.GetAll().All(x => x.Login == _login)))
                 {
                     userRepository.Create(new User
                     {

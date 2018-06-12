@@ -21,7 +21,7 @@ namespace Project.BL
             //flightRepository = new FlightRepository();
         }
 
-        public IEnumerable ReturnFlights(DateTime date, string city1, string city2)
+        public IEnumerable ReturnFlights(DateTime dateD, DateTime dateA, string city1, string city2)
         {
             var query = from fligth in context.Flights
                         join aircraft in context.Aircrafts on fligth.AircraftId equals aircraft.Id
@@ -29,11 +29,13 @@ namespace Project.BL
                         join Acity in context.Cities on fligth.ArrivalCityId equals Acity.ID
                         where Dcity.Name == city1
                         where Acity.Name == city2
-                        where fligth.DepartureTime == date
+                        where fligth.DepartureTime == dateD
+                        where fligth.ArrivalTime == dateA
                         select new
                         {
                             Aircraft = aircraft.Name,
-                            Date = fligth.DepartureTime,
+                            DateD = fligth.DepartureTime,
+                            DateA = fligth.ArrivalTime,
                             DepartureCity = Dcity.Name,
                             ArrivalCity = Acity.Name
                         };

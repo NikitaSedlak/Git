@@ -17,6 +17,23 @@ namespace DAL.Repositories
         {
             this.DBcontext = new Context();
         }
+
+        public AircraftRepository AircraftRepository
+        {
+            get => default(AircraftRepository);
+            set
+            {
+            }
+        }
+
+        public CityRepository CityRepository
+        {
+            get => default(CityRepository);
+            set
+            {
+            }
+        }
+
         public void Create(Flight item)
         {
             DBcontext.Flights.Add(item);

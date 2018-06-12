@@ -56,14 +56,17 @@ namespace Project
                 if (checkUser.CheckLoginedUser(tbLogin.Text, tbPassword.Password))
                 {
                     if (checkUser.CheckAdminUser(tbLogin.Text))
-                    {
+                    { 
                         AdminUser adminUser = new AdminUser();
+                        //Close();
                         adminUser.ShowDialog();
                     }
                     else
                     {
                         CommonUser commonUser = new CommonUser();
+                        //Close();
                         commonUser.ShowDialog();
+                        
                     }
                 }
                 else

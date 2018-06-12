@@ -48,18 +48,20 @@ namespace Project.OtherWindows
 
         private void btnAddFligth_Click(object sender, RoutedEventArgs e)
         {
-            //if (addFlights.AddNewFlight(cmbAir.Text, Convert.ToDateTime(pcrAdate.Text), Convert.ToDateTime(pcrDdate.Text), cmbAcity.Text, cmbDcity.Text))
-            //{
-            //    MessageBox.Show("Flight added!","Success");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("error", "Error!");
-            //}
-
-            string s = addFlights.Test(cmbAir.Text, Convert.ToDateTime(pcrAdate.Text), Convert.ToDateTime(pcrDdate.Text), cmbAcity.Text, cmbDcity.Text);
-
-            MessageBox.Show(s);
+            if (addFlights.CheckFlight(Convert.ToDateTime(pcrAdate.Text),
+                Convert.ToDateTime(pcrDdate.Text),
+                cmbAcity.SelectedItem.ToString(),
+                cmbDcity.SelectedItem.ToString()))
+            {
+                if (addFlights.AddNewFlight(cmbAir.Text, Convert.ToDateTime(pcrAdate.Text), Convert.ToDateTime(pcrDdate.Text), cmbAcity.SelectedItem.ToString(), cmbDcity.SelectedItem.ToString()))
+                    MessageBox.Show("Flight added!", "Success");
+                else
+                    MessageBox.Show("Error ;(");
+            }
+            else
+            {
+                MessageBox.Show("Flight with this data already exists", "Error!");
+            }
         }
     }
 }

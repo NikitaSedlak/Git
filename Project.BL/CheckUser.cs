@@ -48,24 +48,5 @@ namespace Project.BL
                 return false;
             }
         }
-        //public string Test(string login, string password)
-        //{
-        //    try
-        //    {
-        //        if (userRepository.GetAll().Single(p => p.Login == login).Password == password)
-        //            return "OK";
-        //        else
-        //            return "try not ok";
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return e.Message;
-        //    }
-
-        //}
-        //public void Test(string login, string password)
-        //{
-        //    bool t = userRepository.GetAll().Single(p => p.Login == login).Password == password;
-        //}
     }
 }

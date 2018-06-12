@@ -16,6 +16,15 @@ namespace DAL.Repositories
         {
             this.DBcontext = new Context();
         }
+
+        public UserRepository UserRepository
+        {
+            get => default(UserRepository);
+            set
+            {
+            }
+        }
+
         public void Create(Profile item)
         {
             DBcontext.Profiles.Add(item);

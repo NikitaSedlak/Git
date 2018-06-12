@@ -27,5 +27,21 @@ namespace DAL.Domain
 
         [ForeignKey("DepartureCityId")]
         public virtual City DepartureCity { get; set; }
+
+        public Aircraft Aircraft1
+        {
+            get => default(Aircraft);
+            set
+            {
+            }
+        }
+
+        public City City
+        {
+            get => default(City);
+            set
+            {
+            }
+        }
     }
 }
