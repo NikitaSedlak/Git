@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Project.OtherWindows;
 
+using DAL.Repositories;
+
 namespace Project
 {
     /// <summary>
@@ -23,11 +25,12 @@ namespace Project
     public partial class MainWindow : Window
     {
         Project.BL.CheckUser checkUser;
+
         public MainWindow()
         {
             InitializeComponent();
             Database.SetInitializer(new CreateDatabaseIfNotExists<DAL.Context>());
-            checkUser = new BL.CheckUser();
+            checkUser = new BL.CheckUser(new UserRepository());
         }
 
         private void tbPassword_TextChanged(object sender, TextChangedEventArgs e)
@@ -56,7 +59,7 @@ namespace Project
                 if (checkUser.CheckLoginedUser(tbLogin.Text, tbPassword.Password))
                 {
                     if (checkUser.CheckAdminUser(tbLogin.Text))
-                    { 
+                    {
                         AdminUser adminUser = new AdminUser();
                         //Close();
                         adminUser.ShowDialog();
@@ -66,16 +69,15 @@ namespace Project
                         CommonUser commonUser = new CommonUser();
                         //Close();
                         commonUser.ShowDialog();
-                        
+
                     }
                 }
                 else
                 {
                     MessageBox.Show("Error!", "Enter correct data!", MessageBoxButton.OK);
                 }
-                //MessageBox.Show(checkUser.Test(tbLogin.Text, tbPassword.Password).ToString());
-                //checkUser.Test(tbLogin.Text, tbPassword.Password);
-                //checkUser.Test(tbLogin.Text, tbPassword.Text);
+
+                //MessageBox.Show(checkUser.Test1(tbLogin.Text, tbPassword.Password).ToString());
             }
         }
     }

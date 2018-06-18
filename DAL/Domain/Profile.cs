@@ -24,13 +24,13 @@ namespace DAL.Domain
 
         public virtual ICollection<Order> Order { get; set; }
 
-        public User User1
-        {
-            get => default(User);
-            set
-            {
-            }
-        }
+        //public User User1
+        //{
+        //    get => default(User);
+        //    set
+        //    {
+        //    }
+        //}
 
         public Profile()
         {

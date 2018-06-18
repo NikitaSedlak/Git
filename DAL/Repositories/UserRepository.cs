@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DAL.Domain;
+using DAL.Interfaces;
 
 namespace DAL.Repositories
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IUser
     {
         private Context DBcontext;
         public UserRepository()
@@ -29,6 +30,8 @@ namespace DAL.Repositories
                 DBcontext.Users.Remove(user);
             }
         }
+
+        
 
         public virtual IEnumerable<User> GetAll()
         {

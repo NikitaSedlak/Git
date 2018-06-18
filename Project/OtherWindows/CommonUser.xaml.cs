@@ -26,7 +26,7 @@ namespace Project.OtherWindows
         {
             InitializeComponent();
             SetComb();
-            getFlights = new GetFlights();
+            getFlights = new GetFlights(new FlightRepository());
         }
 
         private void SetComb()
